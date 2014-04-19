@@ -36,7 +36,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-			//'class'=>'application.components.EWebUser',
+			'class'=>'application.components.EWebUser',
 		),
 		'Smtpmail'=>array(
             'class'=>'application.extensions.smtpmail.PHPMailer',

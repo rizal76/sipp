@@ -18,12 +18,27 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+<?php
+	if (Yii::app()->controller->action->id == 'create' ) {
+?>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->error($model,'username'); ?>
+	</div>
+<?php
+	} else {
+?>
 	<div class="row" style="display: none; visibility: hidden;">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username',array('size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
+<?php
+	}
+?>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>

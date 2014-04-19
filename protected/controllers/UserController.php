@@ -74,7 +74,13 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-			 $model->level_id=2;
+			if(Yii::app()->user->isSuperAdmin()) {
+				$model->level_id=1;
+			}
+			else {
+				$model->level_id=0;
+			}
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

@@ -30,7 +30,7 @@ class UserIdentity extends CUserIdentity
 		// else
 		// 	$this->errorCode=self::ERROR_NONE;
 		// return !$this->errorCode;
-
+		//$this->_id = 0;
 		$username = strtolower($this->username); 
         $user = User::model()->find('LOWER(username)=?', array($username)); 
         if ($user===null) { // No user found!
@@ -41,14 +41,18 @@ class UserIdentity extends CUserIdentity
 			//$this->username = $user->username;
               //$this->password = $user->password;
 			//Yii::app()->user->login($this ,0);
+			//echo $user->level_id;
+			//$this->_id=0;//$user->level_id;
+			$this->_id = $user->id;
+            $this->username = $user->username;
    			 $this->errorCode=self::ERROR_NONE;
 		}
         return !$this->errorCode;
 	}
 
-	 //  public function getId() 
-  // { 
-  //     return $this->_id; 
-  // } 
+	  public function getId() 
+   { 
+       return $this->_id; 
+  } 
 	
 }

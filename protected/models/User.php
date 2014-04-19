@@ -20,6 +20,7 @@ class User extends CActiveRecord
 		return '{{user}}';
 	}
 
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
