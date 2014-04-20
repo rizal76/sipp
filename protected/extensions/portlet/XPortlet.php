@@ -41,7 +41,7 @@ class XPortlet extends CWidget
 	/**
 	 * @var string the CSS class for the portlet container. Defaults to 'portlet'.
 	 */
-	public $cssClass='portlet';
+	public $cssClass='form-login';
 	/**
 	 * @var string the CSS class for the portlet header. Defaults to 'header'.
 	 */
@@ -50,7 +50,7 @@ class XPortlet extends CWidget
 	/**
 	 * @var string the CSS class for the portlet content. Defaults to 'content'.
 	 */
-	public $contentCssClass='content';
+	public $contentCssClass='';
 
 	/**
 	 * Initializes the portlet.

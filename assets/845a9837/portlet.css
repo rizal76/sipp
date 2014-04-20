@@ -7,9 +7,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-.tek-login {
-	padding-left: 10px;
-	width: 200px;
+p {
+	padding: 20px;
+	margin: 20px;
 }
 .portlet
 {
