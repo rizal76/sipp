@@ -200,6 +200,7 @@ a:focus {
 }
 .content-right{
   float: left;
+  padding-left: 50px;
 }
 .text-content{
   padding-top: 12px;
