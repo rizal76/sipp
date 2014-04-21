@@ -42,7 +42,7 @@ return array(
             'class'=>'application.extensions.smtpmail.PHPMailer',
             'Host'=>"smtp.gmail.com",
             'Username'=>'darkempty99@gmail.com',
-            'Password'=>'lillahitangala1',
+            'Password'=>'propensi',
             'Mailer'=>'smtp',
             'Port'=>587,
             'SMTPAuth'=>true, 
