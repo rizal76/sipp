@@ -418,12 +418,39 @@ input.file {
   border-bottom: 2px solid #2a8bcc;
   cursor: pointer;
 }
+/*detail-lowongan*/
+.detail-lowongan{
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+.detail-lowongan ul{
+  list-style: decimal;
+  margin: 0 auto;
+}
+.detail-lowongan ul > ul{
+  list-style: lower-alpha;
+}
+.detail-lowongan p.button input{
+  width: 15%;
+  position: relative;
+  float: right;
+  vertical-align: top;
+  padding: 2px 5px;
+  color: white;
+  font-size: 14px;  
+  text-align: center;
+  background: #3498db;
+  border: 0;
+  border-bottom: 2px solid #2a8bcc;
+  cursor: pointer;
+}
 /*footer*/
 .footer{
   background: #0f629b;
   line-height: 40px;
   min-width: 980px;
-  height: 60px;
+  min-height: 60px;
   padding: 0px;
   margin: 0px;
 }
