@@ -4,7 +4,6 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'user-form',
@@ -23,16 +22,14 @@
 ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'username',array('placeholder'=>'masukan username','id'=>'nama', 'size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 <?php
 	} else {
 ?>
 	<div class="row" style="display: none; visibility: hidden;">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'username',array('placeholder'=>'masukan username', 'id'=>'nama', 'size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 <?php
@@ -41,28 +38,31 @@
 	
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>30,'maxlength'=>128)); ?>
+		<?php echo $form->passwordField($model,'password',array('placeholder'=>'masukan password','id'=>'password', 'size'=>30,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
 
      <?php if (extension_loaded('gd')): ?> 
-        <div class="row"> 
+        <div class="row" style="text-align: center;"> 
             <?php echo CHtml::activeLabelEx($model, 'verifyCode') ?> 
             <div> 
                 <?php $this->widget('CCaptcha'); ?><br/> 
-                <?php echo CHtml::activeTextField($model,'verifyCode'); ?> 
+                
             </div> 
             <div class="hint">Ketik tulisan yang ada pada gambar . 
             <br/>Tulisan tidak case sensitive</div> 
         </div> 
+        <?php echo CHtml::activeTextField($model,'verifyCode'); ?> 
     <?php endif; ?> 
 
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<p class="login button">
+		<?php echo CHtml::submitButton( $model->isNewRecord ? 'Create' : 'Save',  array(
+        'value'=>'Daftar' )); ?>
+		</p>
 	</div>
 
 <?php $this->endWidget(); ?>
