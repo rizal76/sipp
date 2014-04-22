@@ -112,6 +112,9 @@ a:focus {
   -moz-box-shadow: -5px 0px 17px -8px rgba(0,0,0,0.98);
   box-shadow: -5px 0px 17px -8px rgba(0,0,0,0.98);
 }
+.content-right {
+  padding-left: 30px;
+}
 .menu-left{
   width: 241px;
   margin-left: -40px;
@@ -271,6 +274,9 @@ a:focus {
   border: 0;
   border-bottom: 2px solid #2a8bcc;
   cursor: pointer;
+}
+.tek-login {
+  margin-top: 40px;
 }
 /*data diri*/
 .data-diri{
