@@ -26,7 +26,7 @@
 							    }
 							    else {
 							    	  // MENU FOR MEMBER////
-								   	echo "<li>"; echo CHtml::link('Data Diri', array('/site/page', 'view'=>'kenapa'));  echo "</li>";
+								   	echo "<li>"; echo CHtml::link('Data Diri', array('/site/page', 'view'=>'datadiri'));  echo "</li>";
 								    echo "<li>"; echo CHtml::link('Pengumuman', array('/site/logout'));  echo "</li>";
 								    echo "<li>"; echo CHtml::link('Logout', array('/site/logout'));  echo "</li>";
 							    }
