@@ -220,162 +220,195 @@ a:focus {
 }
 /*daftar lowongan*/
 .daftar-lowongan{
+  width: 90%;
+  margin: 0 auto;
+}
+.daftar-lowongan ul{
   width: 100%;
+  font-size: 20px;
   margin: 0 auto;
-  margin-left: 100px;
 }
-.daftar-lowongan tr{
-  border: 2px #000;
-  width: 500px;
+.daftar-lowongan li{
+  margin: 0 auto;
+  list-style: none;
+  width: 40%;
+  padding-bottom: 5px;
+  float: left;
+}
+.daftar-lowongan a{
+  width: 80%;
+  min-height: 50%;
+  position: relative;
+  display: block;
+  padding: .6em .4em .6em 2em;
+  *padding: .5em;
+  margin: .5em 0;
   font-size: 16px;
+  background: #fff;
+  color: #444;
+  text-decoration: none;
+  border-radius: .3em;  
 }
-.daftar-lowongan td{
-  width: 350px;
-  list-style: square;
-  padding: 15px 70px 15px 50px;
+
+.daftar-lowongan a:hover{
+  background: #eee;
 }
-.daftar-lowongan td:hover{
-  background: #52b6ec;
-  width: 50%;
-  border-radius: 5px;
-  font-color: #fff;
+
+.daftar-lowongan a:hover:before{
+  transform: rotate(360deg);  
 }
-/*login*/
-.login-form{
-  width: 85%;
-  margin: 0 auto;
-}
-.login-form input{
-  width: 50%;
-  margin-top: 9px;
-  margin-left: 200px;
-  text-align: center;
-  padding: 8px 5px 5px 2px;  
-  border: 1px solid rgb(178, 178, 178);
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing : content-box;
-  box-sizing : content-box;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-} 
-.login-form p.button input{
-  width: 13%;
-  margin-right: 180px;
-  position: relative;
-  float: right;
-  vertical-align: top;
-  padding: 2px 5px;
-  color: white;
-  font-size: 14px;  
-  text-align: center;
+
+.daftar-lowongan a:before{
+  content: "";
+  position: absolute; 
+  left: -.3em;
+  top: 50%;
+  margin-top: -0.7em;
   background: #3498db;
-  border: 0;
-  border-bottom: 2px solid #2a8bcc;
-  cursor: pointer;
-}
-.tek-login {
-  margin-top: 40px;
-}
-/*data diri*/
-.data-diri{
-  width: 95%;
-  margin: 0 auto;
-}
-.data-diri label{
-  width: 160px;
-  padding-left: 10px;
-  margin: 0 auto;
-}
-.data-diri input{
-  min-width: 10px;
-}
-.data-diri input[type=text]{
-  width: 250px;
-  border: 1px solid rgb(178, 178, 178);
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing : content-box;
-  box-sizing : content-box;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.data-diri textarea{
-  width: 75%;
-  border: 1px solid rgb(178, 178, 178);
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing : content-box;
-  box-sizing : content-box;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.data-diri input[type=radio]{
-  width: 30px;
-}
-.custom_file_upload{
-}
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 2em;
+  border: .3em solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  }
+  /*login*/
+  .login-form{
+    width: 85%;
+    margin: 0 auto;
+  }
+  .login-form input{
+    width: 50%;
+    margin-top: 9px;
+    margin-left: 200px;
+    text-align: center;
+    padding: 8px 5px 5px 2px;  
+    border: 1px solid rgb(178, 178, 178);
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing : content-box;
+    box-sizing : content-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  } 
+  .login-form p.button input{
+    width: 13%;
+    margin-right: 180px;
+    position: relative;
+    float: right;
+    vertical-align: top;
+    padding: 2px 5px;
+    color: white;
+    font-size: 14px;  
+    text-align: center;
+    background: #3498db;
+    border: 0;
+    border-bottom: 2px solid #2a8bcc;
+    cursor: pointer;
+  }
+  .tek-login {
+    margin-top: 40px;
+  }
+  /*data diri*/
+  .data-diri{
+    width: 95%;
+    margin: 0 auto;
+  }
+  .data-diri label{
+    width: 160px;
+    padding-left: 10px;
+    margin: 0 auto;
+  }
+  .data-diri input{
+    min-width: 10px;
+  }
+  .data-diri input[type=text]{
+    width: 250px;
+    border: 1px solid rgb(178, 178, 178);
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing : content-box;
+    box-sizing : content-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .data-diri textarea{
+    width: 75%;
+    border: 1px solid rgb(178, 178, 178);
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing : content-box;
+    box-sizing : content-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .data-diri input[type=radio]{
+    width: 30px;
+  }
+  .custom_file_upload{
+  }
 
-input.file {
-  width: 300px;
-  height: 15px;
-  border: 1px solid #BBB;
-  border-right: 0;
-  color: #888;
-  padding-bottom: 125px;
-  outline: none;
-  cursor: pointer;
-}
+  input.file {
+    width: 300px;
+    height: 15px;
+    border: 1px solid #BBB;
+    border-right: 0;
+    color: #888;
+    padding-bottom: 125px;
+    outline: none;
+    cursor: pointer;
+  }
 
-.file_upload{
-  width: 190px;
-  height: 24px;
-  display: inline;
-  position: absolute;
-  overflow: hidden;
-  cursor: pointer;
-  font-style: italic;
-  color: #000;
-  text-align: left;
-  padding-bottom: 10px;
-}
-.file_upload:before {
-  content: 'klik dan upload file anda di sini';
-  width: 120px;
-  text-align: left;
-  cursor: pointer;
-  padding: 1px 4px;
-  color: #282828;
-  font-size: 13px;
-}
-.file_upload input{
-  position: relative;
-  height: 30px;
-  width: 210px;
-  display: inline;
-  cursor: pointer;
-  opacity: 0; 
-}
-.data-diri p.button input{
+  .file_upload{
+    width: 190px;
+    height: 24px;
+    display: inline;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    font-style: italic;
+    color: #000;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .file_upload:before {
+    content: 'klik dan upload file anda di sini';
+    width: 120px;
+    text-align: left;
+    cursor: pointer;
+    padding: 1px 4px;
+    color: #282828;
+    font-size: 13px;
+  }
+  .file_upload input{
+    position: relative;
+    height: 30px;
+    width: 210px;
+    display: inline;
+    cursor: pointer;
+    opacity: 0; 
+  }
+  .data-diri p.button input{
    width: 13%;
    margin-right: 50px;
-  position: relative;
-  float: right;
-  vertical-align: top;
-  padding: 2px 5px;
-  color: white;
-  font-size: 14px;  
-  text-align: center;
-  background: #3498db;
-  border: 0;
-  border-bottom: 2px solid #2a8bcc;
-  cursor: pointer;
-}
-/*pengumuman*/
-.pengumuman{
+   position: relative;
+   float: right;
+   vertical-align: top;
+   padding: 2px 5px;
+   color: white;
+   font-size: 14px;  
+   text-align: center;
+   background: #3498db;
+   border: 0;
+   border-bottom: 2px solid #2a8bcc;
+   cursor: pointer;
+ }
+ /*pengumuman*/
+ .pengumuman{
   width: 100%;
   height: 80%;
   padding-bottom: 10px;
