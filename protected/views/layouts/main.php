@@ -7,7 +7,8 @@
 	<meta name="author" content="">
 	<title><?php echo Yii::app()->name;  ?></title>
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" rel="stylesheet">
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-r.css" rel="stylesheet">
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-b.css" rel="stylesheet">
 </head><!--/head-->
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
@@ -16,7 +17,7 @@
 			<div class="container">
 				<div id="navbar" class="navbar navbar-default">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="index.html"></a>
+						<a class="navbar-brand" href="<?php echo Yii::app()->request->baseUrl; ?>"></a>
 					</div>
 				</div>
 			</div>

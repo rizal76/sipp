@@ -14,7 +14,7 @@
 								<div class="daftar-lowongan">
 									<table >
 										<tr>
-											<td><a href="">Staf Programmer Sharepoint</a></td>
+											<td><?php echo CHtml::link('Staf Programmer Sharepoint', array('/site/page', 'view'=>'jobdesc')); ?></td>
 											<td><a href="">Staf Project Manajemen</a></td>
 										</tr>
 										<tr>
