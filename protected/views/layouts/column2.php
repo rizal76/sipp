@@ -12,7 +12,7 @@
 							      
 							    // MENU FOR SUPER ADMIN ////
 							     if(Yii::app()->user->isSuperAdmin()) {
-							     	echo "<li>"; echo CHtml::link('Manage Admin', array('/site/page', 'view'=>'daftaradmin'));  echo "</li>";
+							     	echo "<li>"; echo CHtml::link('Manage Admin', array('/user/admin'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Lowongan', array('/site/page', 'view'=>'daftarlowongan'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Pelamar', array('/site/page', 'view'=>'daftarpelamar'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Logout', array('/site/logout'));  echo "</li>";

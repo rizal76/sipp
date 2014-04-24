@@ -47,6 +47,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'admin' => array(self::HAS_ONE,    'Admin', 'id_user')
 		);
 	}
 
@@ -75,6 +76,7 @@ class User extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
+	//nyari admin
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
@@ -84,7 +86,7 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
-		$criteria->compare('level_id',$this->level_id);
+		$criteria->compare('level_id',1 );
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -118,6 +120,7 @@ class User extends CActiveRecord
 		return true;
 	} 
 
+	
 
 	public function sendMail($to, $message){
 		$info = "Please click here to reset your password ".Yii::app()->getBaseUrl(true)."/index.php?r=user/forgot&code=".$message;
@@ -132,4 +135,6 @@ class User extends CActiveRecord
             echo "Mailer Error: " . $mail->ErrorInfo;
         }
     }
+
+  
 }

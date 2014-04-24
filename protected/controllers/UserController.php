@@ -15,7 +15,6 @@ class UserController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -40,9 +39,14 @@ class UserController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('updateAdmin','viewAdmin','delete','admin', 'createAdmin'),
+				'expression'=>'$user->isSuperAdmin()',
+				//'users'=>array('admin'),
 			),
+			// array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			// 	'actions'=>array('admin','delete'),
+			// 	'users'=>array('admin'),
+			// ),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -57,6 +61,16 @@ class UserController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+		));
+	}
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionViewAdmin($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id), 'admin'=>$this->loadModelAdmin($id)
 		));
 	}
 
@@ -74,21 +88,45 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
-			if(Yii::app()->user->isSuperAdmin()) {
-				$model->level_id=1;
-			}
-			else {
+			// if(Yii::app()->user->isSuperAdmin()) {
+			// 	$model->level_id=1;
+			// }
+			// else {
 				$model->level_id=0;
-			}
+			//}
 			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('sukses','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
+
+
+	public function actionCreateAdmin()
+	{
+		$model=new User;
+		$admin = new Admin;
+		if(isset($_POST['User'], $_POST['Admin'] ))
+		{
+			$model->attributes=$_POST['User'];
+			$model->level_id=1;
+			if($model->save()){
+				$admin->attributes=$_POST['Admin'];
+				$numClients =  Yii::app()->db->createCommand("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'yii_sipp' AND   TABLE_NAME = 'sipp_user'")->queryScalar() -1 ;
+				$admin->id_user=$numClients;
+				$admin->save();
+				$this->redirect(array('user/admin')); 
+			}
+		}
+
+		$this->render('createAdmin',array(
+			'model'=>$model, 'admin'=>$admin,
+		));
+	}
+
 
 	/**
 	 * Updates a particular model.
@@ -102,7 +140,7 @@ class UserController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['User'], $_POST['Admin']))
 		{
 			$model->attributes=$_POST['User'];
 			if($model->save())
@@ -113,6 +151,32 @@ class UserController extends Controller
 			'model'=>$model,
 		));
 	}
+
+
+	/* Untuk update admin
+	*/
+	public function actionUpdateAdmin($id)
+	{
+		$model=$this->loadModel($id);
+		$admin = $this->loadModelAdmin($id);
+
+		if(isset($_POST['User'], $_POST['Admin']))
+		{
+			$model->attributes=$_POST['User'];
+			//$admin->updateDepartemen($id,$newUsedLeaves); // function in model for updating data.
+			if($model->save()){
+				$admin->id_user=$id; 
+				$admin->departemen =  $_POST['Admin']['departemen'];
+				$admin->save();
+				$this->redirect(array('user/admin'));
+			}
+		}
+
+		$this->render('updateAdmin',array(
+			'model'=>$model, 'admin'=>$admin,
+		));
+	}
+
 
 	/**
 	 * Deletes a particular model.
@@ -166,6 +230,22 @@ class UserController extends Controller
 		$model=User::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return User the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModelAdmin($id)
+	{
+		$model=Admin::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'Admin tidak ada.');
 		return $model;
 	}
 

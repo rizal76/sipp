@@ -10,7 +10,20 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h2>Selamat  <?php echo $model->username; ?> terdaftar sebagai member. Silahkan isi data diri untuk melamar pekerjaan yang anda minati.
-</h2>
+<h1>View Admin <?php echo $model->username; ?></h1>
 
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'username',
+		'password',
+	),
+)); ?>
 
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$admin,
+	'attributes'=>array(
+		'departemen',
+	),
+)); ?>

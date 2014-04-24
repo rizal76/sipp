@@ -10,7 +10,9 @@ $this->breadcrumbs=array(
 ?>
 
 <div class="login-form">
+	
 	<h2 class="judul">Daftar Akun Baru</h2>
+	
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
 
