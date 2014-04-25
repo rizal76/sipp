@@ -204,14 +204,10 @@ class PelamarController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Pelamar('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Pelamar']))
-			$model->attributes=$_GET['Pelamar'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
+		$records=Pelamar::model()->findAll();
+	    $this->render('admin',array(
+	        'model'=>$records,
+	    ));
 	}
 
 	/**

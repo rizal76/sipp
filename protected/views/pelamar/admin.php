@@ -35,24 +35,22 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
+<?php
+//  $this->renderPartial('_search',array(
+// 	'model'=>$model,
+// )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'pelamar-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'no_ktp',
-		'nama',
-		'tempat_lahir',
-		'tanggal_lahir',
-		'jenis_kelamin',
-		/*
-		'status',
+<?php 
+
+$this->widget('application.extensions.tablesorter.Sorter', array(
+    'data'=>$model,
+    'columns'=>array(
+        'nama',
+        'tempat_lahir',
+        'tanggal_lahir', 
+        'jenis_kelamin', 
+        'status',
 		'jumlah_anak',
 		'alamat',
 		'kota',
@@ -63,10 +61,37 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'tahun_lulus',
 		'skill',
 		'cover_letter',
-		'cv',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+		'cv',// Relation value given in model
+    )
+));
+
+// $this->widget('zii.widgets.grid.CGridView', array(
+// 	'id'=>'pelamar-grid',
+// 	'dataProvider'=>$model->search(),
+// 	'filter'=>$model,
+// 	'columns'=>array(
+// 		'id',
+// 		'no_ktp',
+// 		'nama',
+// 		'tempat_lahir',
+// 		'tanggal_lahir',
+// 		'jenis_kelamin',
+// 		/*
+// 		'status',
+// 		'jumlah_anak',
+// 		'alamat',
+// 		'kota',
+// 		'tlp',
+// 		'pendidikan',
+// 		'jenjang',
+// 		'jurusan',
+// 		'tahun_lulus',
+// 		'skill',
+// 		'cover_letter',
+// 		'cv',
+// 		*/
+// 		array(
+// 			'class'=>'CButtonColumn',
+// 		),
+// 	),
+// )); ?>
