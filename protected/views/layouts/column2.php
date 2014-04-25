@@ -26,7 +26,14 @@
 							    }
 							    else {
 							    	  // MENU FOR MEMBER////
-								   	echo "<li>"; echo CHtml::link('Data Diri', array('/site/page', 'view'=>'datadiri'));  echo "</li>";
+							    	//cek kalo user belum buat data diri maka create
+							    	$id = Pelamar::model()->findByPk(Yii::app()->user->id);
+							    	if($id==null){
+							    		  	echo "<li>"; echo CHtml::link('Data Diri', array('/pelamar/create'));  echo "</li>";
+							    	} else {
+							    			  	echo "<li>"; echo CHtml::link('Data Diri', array('/pelamar/view',  'id'=>Yii::app()->user->id));  echo "</li>";
+							    	
+							    	}
 								    echo "<li>"; echo CHtml::link('Pengumuman', array('/site/page', 'view'=>'pengumuman'));  echo "</li>";
 								    echo "<li>"; echo CHtml::link('Logout', array('/site/logout'));  echo "</li>";
 							    }

@@ -44,11 +44,13 @@ class Pelamar extends CActiveRecord
 			array('no_ktp, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, status, jumlah_anak, alamat, kota, tlp, pendidikan, tahun_lulus, skill, cover_letter, cv', 'required'),
 			array('jumlah_anak', 'numerical', 'integerOnly'=>true),
 			array('no_ktp, tempat_lahir, jenis_kelamin, status, kota, tlp, jurusan', 'length', 'max'=>20),
-			array('nama, cover_letter, cv', 'length', 'max'=>30),
+			array('nama, cover_letter', 'length', 'max'=>30),
 			array('alamat', 'length', 'max'=>40),
 			array('pendidikan, jenjang', 'length', 'max'=>10),
 			array('tahun_lulus', 'length', 'max'=>4),
 			array('skill', 'length', 'max'=>100),
+
+			array('cv','file', 'types'=>'pdf'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, no_ktp, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, status, jumlah_anak, alamat, kota, tlp, pendidikan, jenjang, jurusan, tahun_lulus, skill, cover_letter, cv', 'safe', 'on'=>'search'),
@@ -63,6 +65,7 @@ class Pelamar extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'pengalaman'=>array(self::HAS_MANY, 'PengalamanKerja', 'id'),
 		);
 	}
 

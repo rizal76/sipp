@@ -33,9 +33,9 @@ class PengalamanKerja extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_pelamar, nama_perusahaan, gaji_terkahir, tanggal_mulai, tanggal_akhir, posisi, jenis, alasan_berhenti', 'required'),
-			array('id_pelamar, nama_perusahaan', 'numerical', 'integerOnly'=>true),
+			array('id_pelamar', 'numerical', 'integerOnly'=>true),
 			array('gaji_terkahir', 'length', 'max'=>30),
-			array('posisi, jenis, alasan_berhenti', 'length', 'max'=>20),
+			array('posisi, nama_perusahaan, jenis, alasan_berhenti', 'length', 'max'=>400),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_pelamar, nama_perusahaan, gaji_terkahir, tanggal_mulai, tanggal_akhir, posisi, jenis, alasan_berhenti', 'safe', 'on'=>'search'),
@@ -50,6 +50,7 @@ class PengalamanKerja extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'pelamar'=>array(self::BELONGS_TO, 'Pelamar', 'id'),
 		);
 	}
 

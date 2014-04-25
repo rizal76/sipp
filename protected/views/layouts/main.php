@@ -25,7 +25,10 @@
 		<div class="content-warp">
 			<div class="container">
 				<div class="content">
-					<?php echo $content; ?>
+					<?php echo $content; 
+
+
+					?>
 					
 				</div>
 			</div>

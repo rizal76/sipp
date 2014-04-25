@@ -25,17 +25,21 @@ class UserController extends Controller
 	 */
 	public function accessRules()
 	{
+		//here is the part where you check for self
+        $id = Yii::app()->request->getParam('id');
+        $self = $this->getSelfAccess($id);
+
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
             'actions'=>array('captcha'),
             'users'=>array('*'),
             ),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'forgot'),
-				'users'=>array('*'),
+				'actions'=>array('index','view'),
+				'users'=>$self,
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create', 'update'),
+				'actions'=>array('create', 'update', 'forgot'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -52,6 +56,18 @@ class UserController extends Controller
 			),
 		);
 	}
+
+	 protected function getSelfAccess($id)
+        {
+                $allow = array();;
+                if(!Yii::app()->user->isGuest) //if it is user, check if it is self
+                {
+                        if($id == Yii::app()->user->id)
+                        	//return true;
+                                $allow[] = Yii::app()->user->getName();
+                }
+                return $allow;
+        }
 
 	/**
 	 * Displays a particular model.
@@ -96,7 +112,7 @@ class UserController extends Controller
 			//}
 			
 			if($model->save())
-				$this->redirect(array('sukses','id'=>$model->id));
+				$this->render('sukses',array('model'=>$model,));
 		}
 
 		$this->render('create',array(

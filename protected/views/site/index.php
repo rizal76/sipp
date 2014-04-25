@@ -1,14 +1,4 @@
-							<div class="text-content">
-								<!-- daftar akun baru
-								<h3>Daftar Akun Baru</h3>
-								<form>
-									<input type="text" placeholder="Nama" required="" id="nama">
-									<input type="text" placeholder="Email" required="" id="email">
-									<input type="text" placeholder="Password" required="" id="password">
-									<p class="login button"> 
-										<input type="submit" value="Daftar" /> 
-									</p>
-								</form>			 -->	
+				<div class="text-content">
 								<!--  list lowongan -->
 								<h3 class="judul">Daftar Lowongan</h3>
 								<div class="daftar-lowongan">
