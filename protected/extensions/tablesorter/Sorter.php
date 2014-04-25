@@ -46,10 +46,10 @@ class Sorter extends CWidget
 	{
 		$bu = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets/');
         $cs = Yii::app()->clientScript;
-        //Intialize CSS
-        $cs->registerCssFile($bu . '/css/tablesorter.css');
-		$cs->registerCssFile($bu . '/css/tablesorter.pager.css');
-		$cs->registerCssFile($bu . '/css/bootstrap.css');
+  //       //Intialize CSS
+  //       $cs->registerCssFile($bu . '/css/tablesorter.css');
+		// $cs->registerCssFile($bu . '/css/tablesorter.pager.css');
+		// $cs->registerCssFile($bu . '/css/bootstrap.css');
 		//Intialize Jquery
 		$cs->registerScriptFile($bu . '/js/jquery-1.10.2.js');
 		$cs->registerScriptFile($bu . '/js/tablesorter.js');
@@ -101,7 +101,7 @@ class Sorter extends CWidget
 			{
 				$find = explode(".", $column);
 				if(count($find)>1) {
-					echo "<td>".$data->$find[0]->$find[1]."hahah</td>";	
+					echo "<td>".$data->$find[0]->$find[1]."</td>";	
 				}
 				else {	
 					//INI CUSTOM CUY HANYA BUAT PDF TAMPILIN LINK DOWNLOADNYA

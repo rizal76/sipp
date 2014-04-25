@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title><?php echo Yii::app()->name;  ?></title>
+	<title><?php echo Yii::app()->name;  ?></title><!-- 
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-r.css" rel="stylesheet">
-	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-b.css" rel="stylesheet">
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style-b.css" rel="stylesheet"> -->
 </head><!--/head-->
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
