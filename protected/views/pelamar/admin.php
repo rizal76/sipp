@@ -47,20 +47,13 @@ $this->widget('application.extensions.tablesorter.Sorter', array(
     'data'=>$model,
     'columns'=>array(
         'nama',
-        'tempat_lahir',
         'tanggal_lahir', 
         'jenis_kelamin', 
         'status',
-		'jumlah_anak',
-		'alamat',
 		'kota',
 		'tlp',
 		'pendidikan',
-		'jenjang',
-		'jurusan',
-		'tahun_lulus',
 		'skill',
-		'cover_letter',
 		'cv',// Relation value given in model
     )
 ));

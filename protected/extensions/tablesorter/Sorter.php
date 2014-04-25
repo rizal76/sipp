@@ -101,9 +101,14 @@ class Sorter extends CWidget
 			{
 				$find = explode(".", $column);
 				if(count($find)>1) {
-					echo "<td>".$data->$find[0]->$find[1]."</td>";	
+					echo "<td>".$data->$find[0]->$find[1]."hahah</td>";	
 				}
 				else {	
+					//INI CUSTOM CUY HANYA BUAT PDF TAMPILIN LINK DOWNLOADNYA
+					
+					if(substr($data->$column, -4)=='.pdf')
+						echo "<td>".CHtml::link('Download CV', Yii::app()->baseUrl.'/cv/'.$data->$column)."</td>";
+					else
 					echo "<td>".$data->$column."</td>";
 				}
 			}
