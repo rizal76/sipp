@@ -14,14 +14,14 @@
 							     if(Yii::app()->user->isSuperAdmin()) {
 							     	echo "<li>"; echo CHtml::link('Manage Admin', array('/user/admin'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Lowongan', array('/site/page', 'view'=>'daftarlowongan'));  echo "</li>";
-							     	echo "<li>"; echo CHtml::link('Pelamar', array('/pelamar/admin');  echo "</li>";
+							     	echo "<li>"; echo CHtml::link('Pelamar', array('/pelamar/admin'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Logout', array('/site/logout'));  echo "</li>";
 
 							     }
 							    // MENU FOR ADMIN ////
 							    else if(Yii::app()->user->isAdmin()) {
 							    	echo "<li>"; echo CHtml::link('Lowongan', array('/site/page', 'view'=>'daftarlowongan'));  echo "</li>";
-							     	echo "<li>"; echo CHtml::link('Pelamar', array('/pelamar/admin');  echo "</li>";
+							     	echo "<li>"; echo CHtml::link('Pelamar', array('/pelamar/admin'));  echo "</li>";
 							     	echo "<li>"; echo CHtml::link('Logout', array('/site/logout'));  echo "</li>";
 							    }
 							    else {
