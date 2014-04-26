@@ -1,6 +1,10 @@
 
-<h1>View Pelamar #<?php echo $model->id; ?></h1>
-
+<h1>Data Diri Pelamar #<?php echo $model->nama; ?></h1>
+<?php
+foreach(Yii::app()->user->getFlashes() as $key => $message) {
+echo '<div class="flash-' . $key . '">' . $message . "</div>\n";
+}
+?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

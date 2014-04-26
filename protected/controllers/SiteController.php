@@ -58,6 +58,12 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	//login kalo belum bisa lamar kerja
+	public function actionLogin()
+	{
+		// display the login form
+		$this->render('login-first');
+	}
 
 	public function actionForget()
 	{
